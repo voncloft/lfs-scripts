@@ -1,4 +1,5 @@
 #!/bin/bash
+### before starting the build decide whether you want sysvinit or systemd
 
 lfs_dirs() {
 	mkdir -pv $LFS/dev
