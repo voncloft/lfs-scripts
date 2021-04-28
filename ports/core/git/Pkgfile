@@ -1,0 +1,19 @@
+# Description: Programs for compressing and decompressing files
+# URL:         https://tukaani.org/xz/
+# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# Depends on:  
+
+name=git
+version=2.31.1
+release=1
+source=(https://tukaani.org/$name/$name-$version.tar.xz)
+
+build() {
+        cd $name-$version
+	./configure --prefix=/usr \
+            --with-gitconfig=/etc/gitconfig \
+            --with-python=python3
+        make
+        make DESTDIR=$PKG install
+        
+}
