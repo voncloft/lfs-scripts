@@ -6,7 +6,7 @@
 name=git
 version=2.31.1
 release=1
-source=(https://tukaani.org/$name/$name-$version.tar.xz)
+source=(https://www.kernel.org/pub/software/scm/git/git-$version.tar.xz)
 
 build() {
         cd $name-$version
@@ -14,6 +14,11 @@ build() {
             --with-gitconfig=/etc/gitconfig \
             --with-python=python3
         make
+	mkdir -pv $PKG/var/lib/scratchpkg/index/$name
+        echo "name=$name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "version=$version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "release=1" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+
         make DESTDIR=$PKG install
         
 }

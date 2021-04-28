@@ -7,10 +7,9 @@ source=()
 
 build() {
         cd $name-$version
+	        mkdir -pv $PKG/var/lib/scratchpkg/index/$name
+        echo "name=$name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "version=$version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "release=1" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
 
-
-        mkdir -pv $PKG/{bin,lib}
-        mv -v   $PKG/usr/bin/{lzma,unlzma,lzcat,xz,unxz,xzcat} $PKG/bin
-        mv -v $PKG/usr/lib/liblzma.so.* $PKG/lib
-        ln -svf ../../lib/$(readlink $PKG/usr/lib/liblzma.so) $PKG/usr/lib/liblzma.so
 }
