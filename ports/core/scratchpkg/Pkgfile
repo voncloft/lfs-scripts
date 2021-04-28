@@ -3,20 +3,15 @@
 name=scratchpkg
 version=20210318
 release=6
-backup="etc/scratchpkg.conf
-        etc/scratchpkg.alias
-        etc/scratchpkg.repo
-        etc/scratchpkg.mask
-        etc/revdep.conf"
+
 scratchpkg_url=https://github.com/voncloft/scratchpkg
-source="$scratchpkg_url/archive/$version.tar.gz
-        $name.repo
-        $name.conf
-        $name.alias
-        $name.mask
-        $scratchpkg_url/commit/497b92c1cdeba692e0a805efa3b0a30644e10c72.patch
-        $scratchpkg_url/commit/b42c48a88cadd40d8f4f30bbffb2f8d58e99a1e0.patch"
-options="!checksum"
+scratch_blob=https://raw.githubusercontent.com/voncloft/scratchpkg/master
+source=($scratchpkg_url/archive/$version.tar.gz
+        $scratch_blob/$name.repo
+        $scratch_blob/$name.conf
+        $scratch_blob/$name.alias
+        $scratch_blob/$name.mask)
+
 build() {
         cd $name-$version
 
