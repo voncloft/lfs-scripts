@@ -7,4 +7,4 @@ wget
 git
 scratchpkg
 
-for each script on the chrrot add to /var/lib/scratchpkg/index/$name info for scratchpkg
+for each script on the chroot add to /var/lib/scratchpkg/index/$name info for scratchpkg
