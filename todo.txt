@@ -1,0 +1,10 @@
+create next:
+nano
+libtasn
+p11-kit
+make-ca
+wget
+git
+scratchpkg
+
+for each script on the chrrot add to /var/lib/scratchpkg/index/$name info for scratchpkg

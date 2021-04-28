@@ -8,7 +8,12 @@ This repo contain scripts to automate multilib LFS build + livecd. This LFS buil
 * wget
 * passes lfs version-check.sh test
 * squashfs-tools & libisoburn (optional to create the livecd iso)
-
+* g++
+* texinfo
+* pkg-config
+* m4
+* gcc-multilib
+* g++-multilib
 ### Scripts
 
 * 01-toolchain
