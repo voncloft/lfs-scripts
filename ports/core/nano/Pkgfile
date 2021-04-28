@@ -1,0 +1,22 @@
+# Depends on:  
+
+name=nano
+version=5.6.1
+release=1
+source=(https://www.nano-editor.org/dist/v5/nano-$version.tar.xz)
+
+build() {
+        cd $name-$version
+	./configure --prefix=/usr     \
+            --sysconfdir=/etc \
+            --enable-utf8     \
+            --docdir=/usr/share/doc/nano-$version
+
+            make
+            make install
+            install -v -m644 doc/{nano.html,sample.nanorc} /usr/share/doc/nano-$version
+            mkdir -pv /var/lib/scratchpkg/index/$name
+            echo "name=$name" >> /var/lib/scratchpkg/index/$name/.pkginfo
+            echo "version=$version" >> /var/lib/scratchpkg/index/$name/.pkginfo
+            echo "release=1" >> /var/lib/scratchpkg/index/$name/.pkginfo
+}
