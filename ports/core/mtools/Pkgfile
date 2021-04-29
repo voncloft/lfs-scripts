@@ -16,8 +16,8 @@ build() {
 		--disable-floppyd
 	make
         mkdir -pv $PKG/var/lib/scratchpkg/index/$name
-        echo "name=$name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
-        echo "version=$version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "name = $name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "version = $version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
         echo "release=1" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
 	sed -i Makefile -e 's|install-scripts install-info|install-scripts|'
 	make -j1 prefix=$PKG/usr install

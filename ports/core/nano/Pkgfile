@@ -16,7 +16,7 @@ build() {
             make DESTDIR=$PKG install
             install -v -m644 doc/{nano.html,sample.nanorc} /usr/share/doc/nano-$version
             mkdir -pv /var/lib/scratchpkg/index/$name
-            echo "name=$name" >> /var/lib/scratchpkg/index/$name/.pkginfo
-            echo "version=$version" >> /var/lib/scratchpkg/index/$name/.pkginfo
+            echo "name = $name" >> /var/lib/scratchpkg/index/$name/.pkginfo
+            echo "version = $version" >> /var/lib/scratchpkg/index/$name/.pkginfo
             echo "release=1" >> /var/lib/scratchpkg/index/$name/.pkginfo
 }

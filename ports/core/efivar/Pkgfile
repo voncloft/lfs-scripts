@@ -13,8 +13,8 @@ build() {
 	sed -e 's/-Werror//g' -i gcc.specs
         make -j1
         mkdir -pv $PKG/var/lib/scratchpkg/index/$name
-        echo "name=$name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
-        echo "version=$version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "name = $name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "version = $version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
         echo "release=1" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
         make libdir=/usr/lib DESTDIR=$PKG install
 }
