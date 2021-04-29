@@ -150,7 +150,7 @@ else
 	ENVLFS=/tools/bin/env
 fi
 
-PKGS="filesystem linux-api-headers man-pages glibc tzdata zlib bzip2 file readline m4 bc binutils gmp mpfr mpc attr acl shadow gcc
+PKGS="linux-api-headers man-pages glibc tzdata zlib bzip2 file readline m4 bc binutils gmp mpfr mpc attr acl shadow gcc
 	pkg-config ncurses libcap sed psmisc iana-etc bison flex grep bash libtool gdbm gperf expat inetutils
 	perl perl-xml-parser intltool autoconf automake xz kmod gettext elfutils libffi openssl python3 coreutils
 	diffutils gawk findutils groff fuse2 grub less gzip iproute2 kbd libpipeline make patch man-db tar texinfo procps-ng
