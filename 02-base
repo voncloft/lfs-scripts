@@ -169,7 +169,7 @@ cp -Ra ports/* $LFS/usr/ports/
 
 for pkg in $PKGS; do
 	case $pkg in
-		filesystem|gcc|bash|perl|coreutils) runinchroot pkgin -i -ic $pkg || die;;
+		filesystem|gcc|bash|perl|coreutils|scratchpkg) runinchroot pkgin -i -ic $pkg || die;;
 		*) runinchroot pkgin -i $pkg || die;;
 	esac
 done
