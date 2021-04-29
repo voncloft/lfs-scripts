@@ -13,7 +13,7 @@ build() {
             --docdir=/usr/share/doc/nano-$version
 
             make
-            make install
+            make DESTDIR=$PKG install
             install -v -m644 doc/{nano.html,sample.nanorc} /usr/share/doc/nano-$version
             mkdir -pv /var/lib/scratchpkg/index/$name
             echo "name=$name" >> /var/lib/scratchpkg/index/$name/.pkginfo
