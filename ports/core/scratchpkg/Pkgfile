@@ -26,4 +26,10 @@ build() {
         install -m644 $SRC/$name.conf $PKG/etc/$name.conf
         install -m644 $SRC/$name.alias $PKG/etc/$name.alias
         install -m644 $SRC/$name.mask $PKG/etc/$name.mask
+
+        mkdir -pv $PKG/var/lib/scratchpkg/index/$name
+        echo "name=$name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "version=$version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "release=1" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+
 }

@@ -51,4 +51,9 @@ build() {
 	$PKG/usr/bin/systemd-machine-id-setup
 	$PKG/usr/bin/systemctl preset-all
 	$PKG/usr/bin/systemctl disable systemd-time-wait-sync.service
+        mkdir -pv $PKG/var/lib/scratchpkg/index/$name
+        echo "name=$name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "version=$version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "release=1" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+
 }

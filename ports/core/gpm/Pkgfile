@@ -19,6 +19,10 @@ build() {
 	./autogen.sh
 	./configure --prefix=/usr --sysconfdir=/etc
 	make
+        mkdir -pv $PKG/var/lib/scratchpkg/index/$name
+        echo "name=$name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "version=$version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "release=1" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
 	make DESTDIR=$PKG install
 
 	ln -sfv libgpm.so.2.1.0 $PKG/usr/lib/libgpm.so

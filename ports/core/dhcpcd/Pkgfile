@@ -16,6 +16,10 @@ build() {
 	./configure --libexecdir=/lib/dhcpcd \
                     --dbdir=/var/lib/dhcpcd
 	make
+        mkdir -pv $PKG/var/lib/scratchpkg/index/$name
+        echo "name=$name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "version=$version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "release=1" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
 	make DESTDIR=$PKG install
 
         cd ../blfs-bootscripts-$bootscriptsversion
@@ -29,4 +33,6 @@ SERVICE="dhcpcd"
 #DHCP_START="-b -q <insert appropriate start options here>"
 #DHCP_STOP="-k <insert additional stop options here>"
 EOF
+
+
 }

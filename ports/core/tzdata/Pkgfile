@@ -21,4 +21,11 @@ build() {
 
         cp -v zone.tab zone1970.tab iso3166.tab $ZONEINFO
         zic -d $ZONEINFO -p America/New_York
+
+
+        mkdir -pv $PKG/var/lib/scratchpkg/index/$name
+        echo "name=$name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "version=$version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "release=1" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+
 }

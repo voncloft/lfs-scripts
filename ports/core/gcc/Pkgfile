@@ -25,6 +25,10 @@ build() {
 	             --with-system-zlib       \
 	             --enable-multilib
 	make
+        mkdir -pv $PKG/var/lib/scratchpkg/index/$name
+        echo "name=$name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "version=$version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "release=1" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
 	make -j1 DESTDIR=$PKG install
 
 	rm -rf $PKG/usr/lib/gcc/$(gcc -dumpmachine)/$version/include-fixed/bits/

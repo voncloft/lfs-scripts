@@ -26,5 +26,9 @@ build() {
 	             --enable-multilib   \
 	             --with-lib-path=/usr/lib:/lib:/usr/lib32
         make tooldir=/usr
+	mkdir -pv $PKG/var/lib/scratchpkg/index/$name
+        echo "name=$name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "version=$version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "release=1" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
         make tooldir=/usr DESTDIR=$PKG install
 }

@@ -11,7 +11,10 @@ source=(https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
 
 build() {
 	cd linux-$version
-
+        mkdir -pv $PKG/var/lib/scratchpkg/index/$name
+        echo "name=$name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "version=$version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        echo "release=1" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
 	make mrproper
 
 	cp $SRC/config ./.config
