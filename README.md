@@ -14,6 +14,10 @@ This repo contain scripts to automate multilib LFS build + livecd. This LFS buil
 * m4
 * gcc-multilib
 * g++-multilib
+
+### Partition Notes
+* MBR = BIOS
+* GPT = EUFI (EWWWWW FI - I haaaaaate EUFI)
 ### Scripts
 
 * 01-toolchain
