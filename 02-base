@@ -1,6 +1,6 @@
 #!/bin/bash
 ### before starting the build decide whether you want sysvinit or systemd
-
+LFS=/mnt/lfs
 lfs_dirs() {
 	mkdir -pv $LFS/dev
 	mknod -m 600 $LFS/dev/console c 5 1 || true
