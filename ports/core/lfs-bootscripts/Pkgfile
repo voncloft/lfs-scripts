@@ -6,21 +6,12 @@
 name=lfs-bootscripts
 version=20200818
 release=1
-source=( http://www.linuxfromscratch.org/lfs/downloads/10.0/lfs-bootscripts-$version.tar.xz
-	lfs-bootscripts_add-support-uefi.patch
-	clock
-	console
-	inittab)
-
+source=( http://www.linuxfromscratch.org/lfs/downloads/10.0/lfs-bootscripts-$version.tar.xz)
 build() {
-	install -d $PKG/etc/sysconfig
-	install -m0644 clock $PKG/etc/sysconfig
-	install -m0644 console $PKG/etc/sysconfig
-	install -m0644 inittab $PKG/etc
-
 	cd $name-$version
 
-	patch -Np1 -i $SRC/lfs-bootscripts_add-support-uefi.patch
+	
+
         mkdir -pv $PKG/var/lib/scratchpkg/index/$name
         echo "name = $name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
         echo "version = $version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo

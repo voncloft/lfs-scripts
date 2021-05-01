@@ -11,18 +11,20 @@ source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz grub.default)
 build() {
         cd $name-$version
 
-        ./configure --prefix=/usr \
-                    --sbindir=/sbin \
-                    --sysconfdir=/etc \
-                    --disable-efiemu \
-                    --disable-werror \
-                    --enable-grub-mount
+	sed "s/gold-version/& -R .note.gnu.property/" \
+    		-i Makefile.in grub-core/Makefile.in
+    	./configure --prefix=/usr          \
+            --sbindir=/sbin        \
+            --sysconfdir=/etc      \
+            --disable-efiemu       \
+            --disable-werror
         make
+	mv -v /etc/bash_completion.d/grub $PKG/usr/share/bash-completion/completions        
+
         mkdir -pv $PKG/var/lib/scratchpkg/index/$name
         echo "name = $name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
         echo "version = $version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
         echo "release=1" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
         make DESTDIR=$PKG install
 
-	install -D -m0644 $SRC/grub.default $PKG/etc/default/grub
 }
