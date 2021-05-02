@@ -158,7 +158,7 @@ PKGS="filesystem linux-api-headers man-pages glibc tzdata zlib bzip2 file readli
 	diffutils gawk findutils groff fuse2 grub less gzip iproute2 kbd libpipeline make patch man-db texinfo procps-ng
 	util-linux e2fsprogs sysklogd sysvinit eudev lfs-bootscripts linux-firmware mkinitramfs libtasn1 p11-kit ca-certificates 
 	wget pkgutils libnl dbus libxml2 dhcpcd wpa_supplicant lzo lz4 squashfs-tools popt pciutils libpng which freetype2 dosfstools
-	curl ports httpup gpm libevent links mtools syslinux nano git scratchpkg"
+	curl ports httpup gpm libevent links mtools syslinux nano git scratchpkg finalize"
 
 if [ ! -f $LFS/var/lib/pkg/db ]; then
 	lfs_dirs
