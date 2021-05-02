@@ -7,11 +7,12 @@ source=(https://www.nano-editor.org/dist/v5/nano-$version.tar.xz)
 
 build() {
         cd $name-$version
+	mkdir -pv /usr/share/doc/nano-$version
 	./configure --prefix=/usr     \
             --sysconfdir=/etc \
             --enable-utf8     \
             --docdir=/usr/share/doc/nano-$version
-
+	    
             make
             make DESTDIR=$PKG install
             install -v -m644 doc/{nano.html,sample.nanorc} /usr/share/doc/nano-$version
