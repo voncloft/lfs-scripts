@@ -1,2 +1,2 @@
 # Set up i18n variables
-#export LANG=<ll>_<CC>.<charmap><@modifiers>
+export LANG=en_US.utf8

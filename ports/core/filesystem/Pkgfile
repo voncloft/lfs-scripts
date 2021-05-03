@@ -27,7 +27,13 @@ source=(bash_logout.skel
 	usb.conf
 	passwd
 	group
-	issue)
+	issue
+	.bash_profile 
+	.profile
+	.bashrc 
+	.bash_logout 
+	
+	)
 
 build() {
 	mkdir -pv $PKG/{bin,boot,etc/{opt,sysconfig},home,lib/firmware,mnt,opt}

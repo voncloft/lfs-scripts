@@ -17,3 +17,15 @@ fi
 #export LANG=<ll>_<CC>.<charmap><@modifiers>
 
 # End ~/.bashrc
+screenfetch -c 2,5
+fortune -s | cowsay | lolcat
+sh /media/Scripts/process_monitor.sh
+PATH=$PATH:/root/.local/bin
+alias reload='clear && source /$(whoami)/.bashrc'
+eval "$(thefuck --alias)"
+
+####
+echo -e "\nCommands: "
+echo "manualtorrent - download torrents take precautions"
+echo "mstanddown - go back to unrestricted vpn"
+echo "update-rep - upgdate github repository"
