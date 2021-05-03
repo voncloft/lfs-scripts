@@ -21,7 +21,7 @@ screenfetch -c 2,5
 fortune -s | cowsay | lolcat
 sh /media/Scripts/process_monitor.sh
 PATH=$PATH:/root/.local/bin
-alias reload='clear && source /$(whoami)/.bashrc'
+alias reload='clear && source /home/$(whoami)/.bashrc'
 eval "$(thefuck --alias)"
 
 ####
