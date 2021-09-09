@@ -23,8 +23,8 @@ build() {
 
 	cp certdata.txt $PKG/etc/ssl
 	install -vm755 make-ca.sh-$version $PKG/usr/sbin/make-ca
-	mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
+	mkdir -pv $PKG/var/lib/scratchpkg/db
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
 	$PKG/usr/sbin/make-ca -D $PKG
 
 	ln -sv /etc/ssl/ca-bundle.crt $PKG/etc/ssl/certs/ca-certificates.crt

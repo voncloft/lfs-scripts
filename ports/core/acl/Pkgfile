@@ -16,8 +16,8 @@ build() {
 	            --disable-static      \
 	            --libexecdir=/usr/lib
         make
-        mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
+        mkdir -pv $PKG/var/lib/scratchpkg/db
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
 	make DESTDIR=$PKG install
 
         mkdir -p $PKG/lib

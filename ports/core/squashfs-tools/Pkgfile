@@ -17,6 +17,6 @@ build() {
         install -Dm755 mksquashfs "$PKG"/usr/bin/mksquashfs
         install -m755 unsquashfs "$PKG"/usr/bin/unsquashfs
 
-        mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
+        mkdir -pv $PKG/var/lib/scratchpkg/db
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
 }

@@ -22,8 +22,8 @@ build() {
                     --enable-manpages       \
                     --disable-static
         make
-        mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
+        mkdir -pv $PKG/var/lib/scratchpkg/db
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
         mkdir -pv $PKG/lib/udev/rules.d
         mkdir -pv $PKG/etc/udev/rules.d
 

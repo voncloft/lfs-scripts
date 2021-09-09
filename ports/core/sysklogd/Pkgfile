@@ -17,8 +17,8 @@ build() {
         mkdir -p $PKG/{sbin,etc,usr/share/man/man{5,8}}
 
         make
-        mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
+        mkdir -pv $PKG/var/lib/scratchpkg/db
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
         make BINDIR=$PKG/sbin MANDIR=$PKG/usr/share/man install
 
         cat > $PKG/etc/syslog.conf << "EOF"
