@@ -20,10 +20,8 @@ build() {
 	[ -d /tools/lib/pkgconfig ] && export PKG_CONFIG_PATH=/tools/lib/pkgconfig
         ./configure --prefix=/usr --disable-vlock
         make
-        mkdir -pv $PKG/var/lib/scratchpkg/index/$name
-        echo "name = $name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
-        echo "version = $version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
-        echo "release=1" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        mkdir -pv $PKG/var/lib/scratchpkg/index/db
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
         make DESTDIR=$PKG install
 
         mkdir -p $PKG/bin

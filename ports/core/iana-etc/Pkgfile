@@ -11,9 +11,7 @@ source=(http://anduin.linuxfromscratch.org/LFS/$name-$version.tar.bz2)
 build() {
         cd $name-$version
         make
-        mkdir -pv $PKG/var/lib/scratchpkg/index/$name
-        echo "name = $name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
-        echo "version = $version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
-        echo "release=1" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        mkdir -pv $PKG/var/lib/scratchpkg/index/db
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
         make DESTDIR=$PKG install
 }

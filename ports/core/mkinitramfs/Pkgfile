@@ -12,9 +12,7 @@ source=(https://github.com/venomlinux/mkinitramfs/archive/$version/$name-$versio
 build() {
         cd $name-$version
         patch -Np1 -i $SRC/2b323335ff368f0bbd40ed7cd907648b2e35bcc1.patch
-        mkdir -pv $PKG/var/lib/scratchpkg/index/$name
-        echo "name = $name" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
-        echo "version = $version" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
-        echo "release=1" >> $PKG/var/lib/scratchpkg/index/$name/.pkginfo
+        mkdir -pv $PKG/var/lib/scratchpkg/index/db
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
         DESTDIR=$PKG ./INSTALL.sh
 }
