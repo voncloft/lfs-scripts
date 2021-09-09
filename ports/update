@@ -84,6 +84,7 @@ run_check() {
 		echo "version  : $version"
 		echo "url      : $url"
 		echo "cmd      : $checkver_cmd"
+		echo "Update   : $UPDATE"
 		$checkver_cmd | tail -n10
 		return
 	else
@@ -99,12 +100,12 @@ run_check() {
 	elif [ "$version" != "$upver" ]; then
 		echo -e " $ppath: $version => ${YELLOW}$upver${CRESET}"
 		[ "$OUT" = 1 ] && echo "$ppath $version => $upver" >> outdate
-		if [ "$UPDATE" = 1 ]; then
-			sed "s/^version=.*/version=$upver/" -i $ppath/Pkgfile
-			pushd $ppath
-				fakeroot pkgbuild -m && sudo pkgbuild -u
-			popd
-		fi
+		#if [ "$UPDATE" = 1 ]; then
+			sed "s/^version=.*/version=$upver/g" -i $ppath/Pkgfile
+			#pushd $ppath
+			#	fakeroot pkgbuild -m && sudo pkgbuild -u
+			#popd
+		#fi
 	fi
 }
 

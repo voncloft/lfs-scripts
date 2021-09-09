@@ -1,7 +1,7 @@
 # Depends on:  
 
 name=scratchpkg
-version=20210318
+version=20210809
 release=6
 
 scratchpkg_url=https://github.com/voncloft/scratchpkg
