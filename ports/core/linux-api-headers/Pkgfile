@@ -18,5 +18,5 @@ build() {
         mkdir -p $PKG/usr/include
         cp -rv usr/include/* $PKG/usr/include
         mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
 }

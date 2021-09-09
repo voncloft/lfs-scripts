@@ -24,7 +24,7 @@ build() {
 	mv -v $PKG/etc/bash_completion.d/grub $PKG/usr/share/bash-completion/completions        
 
         mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
         #make DESTDIR=$PKG install
 
 }

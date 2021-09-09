@@ -12,7 +12,7 @@ source=(https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
 build() {
 	cd linux-$version
         mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
 
 	make mrproper
 	make menuconfig

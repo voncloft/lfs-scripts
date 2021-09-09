@@ -16,7 +16,7 @@ build() {
                     INIT_D_PATH=/tmp/init.d
         make
         mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
         make DESTDIR=$PKG install
 
         install -d $PKG/lib

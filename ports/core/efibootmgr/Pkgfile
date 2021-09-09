@@ -18,5 +18,5 @@ build() {
         install -D src/efibootmgr $PKG/usr/sbin/efibootmgr
         install -D src/efibootmgr.8 $PKG/usr/share/man/man8/efibootmgr.8
         mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
 }

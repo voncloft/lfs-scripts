@@ -18,7 +18,7 @@ build() {
                  zlib-dynamic
         make
         mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
         # disable static lib
         sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
 

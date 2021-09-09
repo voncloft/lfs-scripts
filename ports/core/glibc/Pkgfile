@@ -32,7 +32,7 @@ build() {
 	             libc_cv_slibdir=/lib
 	make
         mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
 	mkdir -p $PKG/etc
 	touch $PKG/etc/ld.so.conf
 	make install_root=$PKG install

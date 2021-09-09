@@ -13,7 +13,7 @@ build() {
 	cd $name-$version
 	make
         mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
 	make DESTDIR=$PKG MANDIR=/usr/share/man install
 
 	install -m 0644 $SRC/core.httpup $PKG/etc/ports

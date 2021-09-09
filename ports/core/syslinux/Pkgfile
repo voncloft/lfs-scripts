@@ -19,6 +19,6 @@ build() {
 	make OPTFLAGS="$CFLAGS" installer
 	make OPTFLAGS="$CFLAGS" INSTALLROOT=$PKG MANDIR=/usr/share/man install
         mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
 
 }

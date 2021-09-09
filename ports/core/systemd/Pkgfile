@@ -52,6 +52,6 @@ build() {
 	$PKG/usr/bin/systemctl preset-all
 	$PKG/usr/bin/systemctl disable systemd-time-wait-sync.service
         mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
 
 }

@@ -26,7 +26,7 @@ build() {
 	             --enable-multilib
 	make
         mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
 	make -j1 DESTDIR=$PKG install
 
 	rm -rf $PKG/usr/lib/gcc/$(gcc -dumpmachine)/$version/include-fixed/bits/

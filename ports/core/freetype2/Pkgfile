@@ -19,6 +19,6 @@ build() {
         ./configure --prefix=/usr --enable-freetype-config --disable-static
         make
         mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
         make DESTDIR=$PKG install
 }

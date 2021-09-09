@@ -28,7 +28,7 @@ build() {
             --disable-werror
         make
         mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
         make DESTDIR=$PKG install
 
         rm -r $PKG/etc/ $PKG/usr/bin $PKG/sbin $PKG/usr/share/{locale,info}

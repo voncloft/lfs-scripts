@@ -16,7 +16,7 @@ build() {
 		--disable-floppyd
 	make
         mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
 	sed -i Makefile -e 's|install-scripts install-info|install-scripts|'
 	make -j1 prefix=$PKG/usr install
 }

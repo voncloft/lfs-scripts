@@ -27,6 +27,6 @@ build() {
 	             --with-lib-path=/usr/lib:/lib:/usr/lib32
         make tooldir=/usr
 	mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
         make tooldir=/usr DESTDIR=$PKG install
 }

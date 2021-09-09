@@ -25,6 +25,6 @@ build() {
              install install-lib
 
         mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
         chmod -v 755 $PKG/usr/lib/libpci.so
 }

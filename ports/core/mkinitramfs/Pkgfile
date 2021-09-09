@@ -13,6 +13,6 @@ build() {
         cd $name-$version
         patch -Np1 -i $SRC/2b323335ff368f0bbd40ed7cd907648b2e35bcc1.patch
         mkdir -pv $PKG/var/lib/scratchpkg/index/db
-        echo "$version release=1" >> $PKG/var/lib/scratchpkg/db/$name
+        echo "$version release=1" >> $PKG/var/lib/scratchpkg/index/db/$name
         DESTDIR=$PKG ./INSTALL.sh
 }
