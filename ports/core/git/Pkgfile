@@ -4,7 +4,7 @@
 # Depends on:  
 
 name=git
-version=2.33.0
+version=2.33.1
 release=1
 source=(https://www.kernel.org/pub/software/scm/git/git-$version.tar.xz)
 
