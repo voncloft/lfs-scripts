@@ -231,7 +231,7 @@ basepkg="aaa_filesystem linux-headers man-pages glibc tzdata zlib bzip2 xz file 
 	libtool gdbm gperf expat inetutils perl perl-xml-parser intltool autoconf automake openssl kmod gettext elfutils
 	libffi sqlite python coreutils check diffutils gawk findutils groff less gzip zstd iptables libtirpc iproute2 kbd
 	libpipeline make patch man-db tar texinfo vim procps-ng util-linux e2fsprogs sysklogd eudev which
-	libarchive ca-certificates curl pkgutils prt-get httpup linux-pam ports prt-utils runit runit-rc signify"
+	libarchive ca-certificates curl pkgutils httpup linux-pam"
 
 sourcedir="$PWD/sources"
 packagedir="$PWD/packages"
