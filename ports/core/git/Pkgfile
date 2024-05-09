@@ -1,0 +1,8 @@
+name=git
+version=2.45.0
+release=1
+source=(https://www.kernel.org/pub/software/scm/git/git-$version.tar.xz)
+build_opt="--with-gitconfig=/etc/gitconfig --with-python=python3"
+pkg_build() {
+	make perllibdir=/usr/lib/perl5/5.38/site_perl DESTDIR=$PKG install
+}
