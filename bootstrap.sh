@@ -227,10 +227,10 @@ toolchainpkg="binutils-pass1 gmp mpfr mpc gcc-pass1 linux-headers glibc gcc-pass
 	sed tar texinfo xz openssl ca-certificates curl libarchive"
 	
 basepkg="aaa_filesystem linux-headers man-pages glibc tzdata zlib bzip2 xz file ncurses readline m4 bc binutils libxcrypt
-	gmp mpfr mpc attr acl shadow gcc pkgconf libcap sed psmisc iana-etc bison flex pcre2 grep bash dash
+	gmp mpfr mpc attr acl shadow gcc pkgconf libcap sed psmisc iana-etc bison flex pcre2 grep bash
 	libtool gdbm gperf expat inetutils perl perl-xml-parser intltool autoconf automake openssl kmod gettext elfutils
 	libffi sqlite python coreutils check diffutils gawk findutils groff less gzip zstd iptables libtirpc iproute2 kbd
-	libpipeline make patch man-db tar texinfo vim procps-ng util-linux e2fsprogs sysklogd eudev which
+	libpipeline make patch man-db tar texinfo nano procps-ng util-linux e2fsprogs sysklogd eudev which
 	libarchive ca-certificates curl pkgutils httpup linux-pam"
 
 sourcedir="$PWD/sources"

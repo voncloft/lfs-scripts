@@ -302,7 +302,8 @@ main() {
 	fi
 }
 
-PORTREPO="core extra multilib"
+#PORTREPO="core extra multilib"
+PORTREPO="core"
 PORTSDIR="$(dirname $(dirname $(realpath $0)))"
 SCRIPTDIR="$(dirname $(realpath $0))"
 
